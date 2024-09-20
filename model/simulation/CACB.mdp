@@ -1,0 +1,45 @@
+;Run control: Use Langevin dynamics. 
+integrator = sd 
+dt = 0.0005
+;number of integration steps 
+;nsteps = 800000000 ; 400 ns
+nsteps = XSteps; 1000 ns
+nstxout = 0 
+nstvout = 0 
+nstlog = 2000 ; 1 ps 
+nstenergy = 2000 ; 1 ps
+nstxtcout = 2000 ; 1 ps
+
+
+
+xtc_grps = system 
+energygrps = system 
+
+
+nstlist = 20 
+ns_type = simple
+
+rlist = 3.0 
+rcoulomb = 3.0 
+rvdw = 3.0 
+
+coulombtype = User 
+vdwtype = User 
+epsilon_r = 80 
+
+
+pbc = no
+table-extension = 96 ; (nm) !IMPORTANT! Set this so that rvdw + table-extension equals half of the box's longest diagonal. 
+tc-grps = system 
+
+tau_t = 1.0 ; Temperature coupling time constant. Smaller values = stronger coupling. 
+ref_t = XTemp ; In reduced units (see Gromacs Manual for explanation. We find many proteins fold around T=100-120) 
+Pcoupl = no 
+
+gen_vel = yes 
+gen_temp = XTemp
+gen_seed = -1 
+ld_seed = -1 
+comm_mode = angular ; center of mass velocity removal. Make sure you select what is proper for your simulation. 
+;constraints = all-bonds; constraints applied to all-bonds.
+;constraint_algorithm = LINCS; LINCS algorithm applied
