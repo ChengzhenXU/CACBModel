@@ -4,4 +4,4 @@ This repository contains core code and resources for simulating dynamic using Gr
 
 Simulation Files: Gromacs input files for running the molecular simulations.
 
-Analysis Tools: Python scripts necessary for analyzing simulation data.
+Analysis Tools: Python and matlab scripts necessary for analyzing simulation data.
