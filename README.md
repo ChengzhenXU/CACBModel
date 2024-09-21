@@ -1,4 +1,4 @@
-# CACB_model
+# CACBModel
 
 This repository contains core code and resources for simulating dynamic using Gromacs (version 4.5.7). It includes the following components:
 
